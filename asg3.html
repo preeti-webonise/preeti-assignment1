@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>change cell colour</title>
+<h4>select colour and click on cell</h4>
+</head>
+<body>
+<form>
+    <input type="radio" name="color" id="red">Red</input>
+    <input type="radio" name="color" id="blue">Blue</input>
+    <input type="radio" name="color" id="green">Green</input>
+    
+    <table border=5 id="grid" width="150px">
+      <tr>
+        <td onclick="setColour(this)" id="1"> 1 </td>
+        <td onclick="setColour(this)" id="2"> 2 </td>
+        <td onclick="setColour(this)" id="3"> 3 </td>
+      </tr>
+      <tr>
+        <td onclick="setColour(this)" id="4"> 4 </td>
+        <td onclick="setColour(this)" id="5"> 5 </td>
+        <td onclick="setColour(this)" id="6"> 6 </td>
+      </tr>
+      <tr>
+        <td onclick="setColour(this)" id="7"> 7 </td>
+        <td onclick="setColour(this)" id="8"> 8 </td>
+        <td onclick="setColour(this)" id="9"> 9 </td>
+      </tr>
+    </table>
+    <input type="button" id="reset" onclick="resetgrid()" value="reset">
+    <input type="button" id="shuffle" onclick="shufflegrid()" value="shuffle">
+</form>
+
+<script type="text/javascript">
+function setColour(tdcolor)
+{
+           if(document.getElementById('red').checked)
+          {
+              if(tdcolor.bgColor=="Red")
+              {
+                  alert("Already red");
+              }
+              else
+              {
+                  tdcolor.bgColor = "Red";
+              }
+                 
+          }
+          if(document.getElementById('blue').checked)
+          {
+              if(tdcolor.bgColor=="Blue")
+              {
+                  alert("Already blue");
+              }
+              else
+              {
+                  tdcolor.bgColor = "Blue";
+	      }
+          }
+          if(document.getElementById('green').checked)
+          {
+              if(tdcolor.bgColor=="Green")
+              {
+                  alert("Already green");
+              }
+              else
+              {
+                  tdcolor.bgColor = "Green";
+	      }
+          }
+}
+
+function resetgrid() 
+{
+         var grid = document.getElementById('grid');
+         for (var r = 0, n = grid.rows.length; r < n; r++) 
+        {
+            for (var c = 0, m = grid.rows[r].cells.length; c < m; c++) 
+           {
+              grid.rows[r].cells[c].bgColor="white";
+           }
+        }
+}
+
+ function shuffle_grid(gridarray) 
+            {
+                var length = gridarray.length;
+                var temp, randomnum;
+                while (0 !== length) 
+                {
+                    randomnum = Math.floor(Math.random() * length);
+                    length -= 1;
+                    temp = gridarray[length];
+                    gridarray[length] = gridarray[randomnum];
+                    gridarray[randomnum] = temp;
+                }
+                return gridarray;
+            }
+
+            
+function shufflegrid()
+            {
+                var grid = document.getElementById('grid');
+                var gridcount=0;
+                var gridarray=[];
+                for (var r = 0, n = grid.rows.length; r < n; r++) 
+                {
+                    for (var c = 0, m = grid.rows[r].cells.length; c < m; c++) 
+                    {
+                        gridcount++;
+                        gridarray.push(gridcount);
+                    }
+                }
+                gridarray=shuffle_grid(gridarray);
+                var i=0;
+                for (var r = 0, n = grid.rows.length; r < n; r++) 
+                {
+                    for (var c = 0, m = grid.rows[r].cells.length; c < m; c++) 
+                    {
+                        element=document.getElementById(""+gridarray[i]);
+                        temp=grid.rows[r].cells[c].bgColor;
+                        grid.rows[r].cells[c].bgColor=element.bgColor;
+                        element.bgColor=temp;
+                        i++;
+                    }
+                }
+                
+            }
+
+
+</script>
+</body>
+</html>
