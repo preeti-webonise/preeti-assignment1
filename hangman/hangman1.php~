@@ -1,0 +1,36 @@
+<?php
+require_once 'hangedman.php';
+$category="household things";
+$words=array();
+$numwords=0;
+
+function get_words()
+{
+	global $words,$numwords;
+	$file_content=fopen("words.txt","r");
+	
+	while(true)
+	{
+		$word=fgets($file_content);
+		if(!$word) break;
+		$words[]=rtrim($word,"\n");
+		$numwords++;
+	}
+	fclose($file_content);
+}
+
+function play_game()
+{
+	global $words;
+	global $numwords;
+	global $hanged;
+	global $category;
+	global $guess_template;
+	$choose_word=rand(0,$numwords-1);
+	$choosed_word=$words[$choose_word];
+	$guess_template=str_repeat(" _ ",strlen($choosed_word));
+	@header("location:print_page.php?image=$hanged[0]&&guess_template=$guess_template && guessed=NULL && wrong=0 && choose_word=$choose_word");	
+}
+play_game();
+?>
+
