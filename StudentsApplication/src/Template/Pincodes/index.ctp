@@ -5,12 +5,12 @@
         <th>District</th>
     </tr>
 
-    <!-- Here is where we iterate through our $articles query object, printing out article info -->
+   
 
-    <?php foreach ($pincodes as $pincodes): ?>
+    <?php foreach ($pincodes as $pincode): ?>
     <tr>
-        <td><?= $pincodes->id ?></td>
-        <td><?= $pincodes->district ?></td>
+        <td><?= $pincode->id ?></td>
+        <td><?= $pincode->area ?></td>
     </tr>
     <?php endforeach; ?>
 </table>
