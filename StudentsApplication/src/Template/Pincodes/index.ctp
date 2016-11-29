@@ -2,7 +2,7 @@
 <table>
     <tr>
         <th>Pincode id</th>
-        <th>District</th>
+        <th>Area</th>
     </tr>
 
    
