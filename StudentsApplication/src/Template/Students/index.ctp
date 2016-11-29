@@ -6,7 +6,7 @@
         <th>Address city</th>
     </tr>
 
-    <!-- Here is where we iterate through our $articles students object, printing out article info -->
+    
 
     <?php foreach ($students as $student): ?>
     <tr>
