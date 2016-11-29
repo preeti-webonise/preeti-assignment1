@@ -7,21 +7,6 @@ use Cake\ORM\TableRegistry;
 class StudentsTable extends Table
 {
 
-    /*public function initialize(array $config)
-    {
-
-	$this->table('students');
-	$this->belongsTo('pincodes', [
-            'className' => 'PincodesTable',
-            'foreignKey' => 'id',
-            'joinTable' => 'students',
-            'through' => 'StudentsTable',
-            
-        ]);
-		$this->hasOne('Pincodes', [
-           'foreignKey' => 'id'
-        ]);*/
-	//}
 
 	public function initialize(array $config)
     {$this->table('students');
@@ -41,9 +26,8 @@ class StudentsTable extends Table
 		->innerJoinWith('Addresses', function ($q) {
          return $q->where(['Students.id' => 101]);
              });
-		//echo '<pre>',print_r($studentsQuery);exit;
-
+		
     return $studentsQuery;
-         //$this->set('students',$studentsQuery);
+        
     }
 }
