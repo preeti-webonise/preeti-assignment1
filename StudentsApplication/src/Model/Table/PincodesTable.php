@@ -5,20 +5,7 @@ use Cake\ORM\Table;
 
 class PincodesTable extends Table
 {
-
-    /*public function initialize(array $config)
-    {
-
-    $this->table('pincodes');
-	
-	 /*$this->hasMany('students', [
-            'className' => 'StudentsTable',
-            'foreignKey' => 'pincode',
-            ]);*/
-		//$this->belongsTo('Students');
-    //}*/
-
-    public function initialize(array $config)
+        public function initialize(array $config)
     {
         $this->hasMany('Students', [
             'foreignKey' => 'pincode',
