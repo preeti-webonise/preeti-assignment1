@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload file</title>
+</head>
+<body>
+	<form action="fileUpload.php" method="POST" enctype="multipart/form-data">
+		<input type="hidden" name="MAX_FILE_SIZE" value="65535" /> 
+		Select File to upload : - <input type="file" id ="file" name="file"><br/>
+		<br/><input type="submit" name="uploadFile" value ="Upload File">
+		<br/><input type="submit" name="generateStatus" value="Generate Status">
+	</form>
+</body>
+</html>
