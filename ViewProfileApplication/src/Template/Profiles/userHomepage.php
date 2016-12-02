@@ -17,6 +17,9 @@ $userName=$_GET['username'];?>
 
 	    <form method="post" action="../Users/edit.html">
 	    	<input type="submit" value="Edit password"></form>
+
+	     <br><form method="post" action="../Users/delete.html">
+	    	<input type="submit" value="Delete Your Account"></form>
 </body>
 </html>
 
