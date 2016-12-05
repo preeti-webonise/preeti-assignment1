@@ -28,4 +28,12 @@
     	echo 'Caught exception: ' , $e->getMessage() , "\n";
 	}
 ?>
+<!DOCTYPE html>
+<html>
+<head><title>ExitPage</title></head>
+<body>
+	<form method = "post" action = "HomePage.php">
+		<input type = "submit" value="Explore More Books">
+	</form>
+</body>
 

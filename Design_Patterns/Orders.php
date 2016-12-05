@@ -24,7 +24,7 @@
 		$selectQuery  = "Update books set quantity=quantity-" . $this->inputQuantity . "WHERE book_name='" . $this->bookName . "'"; 
 		$statement    = $database->prepare($selectQuery);
 		$statement->execute();
-		echo"You have purchased\t" . $this->bookName . "\tbook of netprice" . $this->netPrice . "\t" . $this->currency;
+		echo"You have purchased" . "\t" . $this->bookName . "\t" . "book of netprice" . $this->netPrice . "\t" . $this->currency;
 		echo "<br />";
 	    }     
 

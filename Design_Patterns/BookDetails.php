@@ -11,7 +11,10 @@
 	$book 	     = $bookName . '.txt' ;
 	$file        = fopen('Books/' . $book , 'r');
 	$bookContent = file_get_contents('Books/' . $book);
-	echo "<textarea name = 'bookDescription'rows = '30' cols = '50' >" . $bookContent . "</textarea><br>";
+	echo "Book Name: " . $bookName;
+	echo "<br />";
+	echo "Book Description: " . $bookContent;
+	echo "<br />";
 	try {
 		$dbConnection = new PostgreSqlConnection;
 		$database     = $dbConnection->connectDB();
@@ -27,7 +30,7 @@
 		$UKPrice      = $dollar->findPrice();
 		echo "Book Price In Rupees : RS" . $indianPrice . "<br />";
 	    echo "Book Price In Dollar : $" . $USPrice . "<br />";
-	    echo "Book Price In Pounds: £" . $UKPrice . "<br />";
+	    echo "Book Price In Pounds : £" . $UKPrice . "<br />";
 	}catch (Exception $e) {
     	echo 'Caught exception: ' ,  $e->getMessage() , "\n";
     }
