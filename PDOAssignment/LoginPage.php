@@ -11,9 +11,11 @@
 		$password=$_POST['password'];
 		$selectStatement= "SELECT * FROM users WHERE email = '".$userName."' and password='".$password."'"; 
 		$statement = $databaseConnection->query($selectStatement);
+		if(!empty($statement)){
 		foreach($statement as $row)
-		{
-    		 $flag="true";
+			{
+    			 $flag="true";
+			}
 		}
 		if($flag=="true")
 		{
