@@ -1,4 +1,5 @@
 <?php
-Abstract class DBConnection{
-	public abstract function connectDB();
+	Abstract class DBConnection {
+		public abstract function connectDB();
 }
+?>
