@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<phpunit>
+	<php>
+        <const name="MAGENTO_ROOT" value="/home/webonise/Desktop/online_shopping/magento" />
+    </php>
+</phpunit>
